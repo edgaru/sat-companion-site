@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aviso de privacidad — SAT Companion</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 4rem;
+        font:
+          16px/1.65 system-ui,
+          -apple-system,
+          'Segoe UI',
+          sans-serif;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+        margin-top: 2.25rem;
+      }
+      .sub {
+        color: #666;
+        margin-top: 0;
+      }
+      .key {
+        border-left: 4px solid #059669;
+        padding: 0.75rem 1rem;
+        background: #ecfdf5;
+        color: #065f46;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 0.75rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 0.5rem;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+      }
+      code {
+        font-size: 0.9em;
+        word-break: break-all;
+      }
+      footer {
+        margin-top: 3rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      @media (prefers-color-scheme: dark) {
+        .key {
+          background: #052e23;
+          color: #a7f3d0;
+        }
+        th,
+        td {
+          border-bottom-color: #333;
+        }
+        .sub,
+        footer {
+          color: #999;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Aviso de privacidad</h1>
+    <p class="sub">
+      SAT Companion — extensión para Chrome y Edge. Última actualización: 30 de julio de 2026.
+    </p>
+
+    <p class="key">
+      <strong>Tus datos fiscales nunca salen de tu computadora.</strong> Los CFDI que descargas u
+      organizas se guardan únicamente en el almacenamiento local de tu navegador. No los enviamos a
+      ningún servidor, ni al nuestro ni a terceros.
+    </p>
+
+    <h2>Qué NO hacemos, nunca</h2>
+    <ul>
+      <li>
+        <strong>Tus credenciales fiscales nunca salen de tu equipo.</strong> Si una función usa tu
+        Contraseña (CIEC), tu e.firma (FIEL) o tus CSD, lo hace únicamente dentro de tu computadora,
+        para conectarse con el SAT en tu nombre. No las enviamos a nuestros servidores ni a
+        terceros.
+      </li>
+      <li>No enviamos tus XML, tus RFC, tus montos ni tus UUID a ningún servidor.</li>
+      <li>No usamos analítica, rastreadores, publicidad ni perfilado.</li>
+      <li>No vendemos ni compartimos información con terceros.</li>
+    </ul>
+
+    <h2>Qué se guarda en tu equipo</h2>
+    <p>
+      Todo esto vive en el almacenamiento local del navegador (IndexedDB) y puedes borrarlo
+      desinstalando la extensión o desde las opciones de tu navegador:
+    </p>
+    <ul>
+      <li>Los CFDI que importas o descargas (XML y sus datos: RFC, montos, fechas, UUID).</li>
+      <li>El estado de tus descargas, para poder reanudarlas.</li>
+      <li>Tus preferencias, y el RFC que configuraste para clasificar emitidas y recibidas.</li>
+    </ul>
+
+    <h2>Las únicas conexiones que hace la extensión</h2>
+    <table>
+      <tr>
+        <th>A dónde</th>
+        <th>Qué enviamos</th>
+        <th>Para qué</th>
+      </tr>
+      <tr>
+        <td><code>portalcfdi.facturaelectronica.sat.gob.mx</code></td>
+        <td>Las mismas peticiones que hace el portal cuando tú lo usas, con tu sesión</td>
+        <td>Buscar y descargar tus CFDI</td>
+      </tr>
+      <tr>
+        <td><code>edgaru.github.io/sat-companion/status.json</code></td>
+        <td>Nada. Es una descarga de un archivo público</td>
+        <td>Avisarte si el portal del SAT está caído, para que sepas que no es tu equipo</td>
+      </tr>
+      <tr>
+        <td><code>anvrvfsrngowaulrihyu.supabase.co</code></td>
+        <td>
+          Tu correo y el token de tu sesión de SAT Companion. <strong>Ningún dato fiscal</strong>
+        </td>
+        <td>Identificar tu cuenta y saber qué plan tienes</td>
+      </tr>
+    </table>
+
+    <h2>Tu cuenta de SAT Companion</h2>
+    <p>
+      Si activas un plan, guardamos tu correo electrónico y el estado de tu suscripción. Nada más.
+      Esa cuenta <strong>no es</strong> tu acceso al SAT y no tiene relación con él. Los pagos los
+      procesa Stripe; nosotros no vemos ni guardamos los datos de tu tarjeta.
+    </p>
+
+    <h2>Permisos que pide la extensión y por qué</h2>
+    <table>
+      <tr>
+        <th>Permiso</th>
+        <th>Para qué</th>
+      </tr>
+      <tr>
+        <td><code>storage</code></td>
+        <td>Guardar tus preferencias</td>
+      </tr>
+      <tr>
+        <td><code>alarms</code></td>
+        <td>Reanudar una descarga interrumpida</td>
+      </tr>
+      <tr>
+        <td><code>sidePanel</code></td>
+        <td>Mostrar el panel de descargas</td>
+      </tr>
+      <tr>
+        <td><code>scripting</code></td>
+        <td>Reconectar la extensión con la pestaña del SAT tras una actualización</td>
+      </tr>
+      <tr>
+        <td><code>sat.gob.mx</code></td>
+        <td>Operar sobre tu propia sesión del portal y mostrar el aviso de estado</td>
+      </tr>
+    </table>
+
+    <h2>Tus derechos</h2>
+    <p>
+      Como tus datos fiscales solo existen en tu equipo, tú los controlas por completo: puedes
+      exportarlos a Excel o ZIP y borrarlos cuando quieras. Para lo relacionado con tu cuenta y tu
+      suscripción (acceso, rectificación, cancelación u oposición conforme a la LFPDPPP),
+      escríbenos.
+    </p>
+
+    <h2>Cambios</h2>
+    <p>
+      Si esto cambia, actualizaremos la fecha de arriba y lo anotaremos en las notas de la versión
+      de la extensión.
+    </p>
+
+    <footer>
+      <p>Contacto: <a href="mailto:edgarfur@gmail.com">edgarfur@gmail.com</a></p>
+      <p>Proyecto independiente. <strong>No afiliado al SAT</strong> ni al Gobierno de México.</p>
+    </footer>
+  </body>
+</html>
